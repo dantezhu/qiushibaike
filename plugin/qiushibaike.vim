@@ -8,7 +8,7 @@
 "     HomePage: http://www.vimer.cn
 "
 "      Created: 2011-04-04 00:27:13
-"      Version: 0.0.6
+"      Version: 0.0.7
 "      History:
 "               0.0.1 | dantezhu | 2011-04-04 00:27:13 | initialization
 "               0.0.2 | dantezhu | 2011-04-04 00:27:34 | 增加是否设置代理的功
@@ -20,6 +20,7 @@
 "               QBN和QBHotN命令
 "               0.0.6 | dantezhu | 2012-06-13 10:24:58 | 升级beautifulsoup至
 "               4.0，针对糗百改版改善匹配方法
+"               0.0.7 | dantezhu | 2014-12-15 15:16:58 | has_attr
 "
 "=============================================================================
 
@@ -83,7 +84,7 @@ from bs4 import BeautifulSoup, Tag, NavigableString
 
 def recurTags(tag):
     if isinstance(tag,Tag):
-        if tag.has_key('class') and tag['class'] == 'tags':
+        if tag.has_attr('class') and tag['class'] == 'tags':
             return ''
 
         tmpStr = ''
